@@ -49,6 +49,22 @@ public class VentanaArrayList extends JFrame {
         n1=Double.parseDouble(nota1Label.getText());
         n2=Double.parseDouble(nota2Label.getText());
         n3=Double.parseDouble(nota3Label.getText());
+        n1 = Double.parseDouble(nota1Label.getText());
+        if (n1 < 0 || n1 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 1 esta fuera del rango permitido", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+
+        n2 = Double.parseDouble(nota2Label.getText());
+        if (n2 < 0 || n2 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 2 esta fuera del rango permitido", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+
+        n3 = Double.parseDouble(nota3Label.getText());
+        if (n3 < 0 || n3 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 3 esta fuera del rango permitido", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+        }
 
         notaFinal.add(promedio = (n1+n2+n3)/3);
         cantEstudiantesValidados++;

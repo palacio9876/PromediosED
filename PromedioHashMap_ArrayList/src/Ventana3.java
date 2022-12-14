@@ -66,7 +66,7 @@ public class Ventana3 extends JFrame {
     private void imprimirResultados() {
         mosProm.setText(String.valueOf(promedioNotasFinales));
         mosIngre.setText(String.valueOf(cantEstudiantesValidados));
-        mosNotas.setText(String.valueOf(cantEstudiantesValidados*3));
+        mosNotas.setText(String.valueOf(cantEstudiantesValidados * 3));
         mosApro.setText(String.valueOf(cantGanan));
         mosRepro.setText(String.valueOf(cantPierdenSinRecuperar));
         mosRecu.setText(String.valueOf(cantPuedenRecuperar));
@@ -75,35 +75,28 @@ public class Ventana3 extends JFrame {
     }
 
 
-
     private void validarNota() {
         double n1 = 0;
         double n2 = 0;
         double n3 = 0;
         ListaNotasFinales = new ArrayList<Double>();
 
-       do {
-            n1 = Double.parseDouble(nota1Label.getText());
-            if (n1 < 0 || n1 > 5) {
-                JOptionPane.showMessageDialog(null, "La nota esta fuera del rango permitido", "ERROR", JOptionPane.ERROR_MESSAGE);
-            }
-        } while (n1 < 0 || n1 > 5);
+        n1 = Double.parseDouble(nota1Label.getText());
+        if (n1 < 0 || n1 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 1 esta fuera del rango permitido", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
 
-        do {
-            n2 = Double.parseDouble(nota2Label.getText());
-            if (n2 < 0 || n2 > 5) {
-                JOptionPane.showMessageDialog(null, "La nota esta fuera del rango permitido", "ERROR",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-        } while (n2 < 0 || n2 > 5);
+        n2 = Double.parseDouble(nota2Label.getText());
+        if (n2 < 0 || n2 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 2 esta fuera del rango permitido", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+        }
 
-        do {
-            n3 = Double.parseDouble(nota3Label.getText());
-            if (n3 < 0 || n3 > 5) {
-                JOptionPane.showMessageDialog(null, "La nota esta fuera del rango permitido", "ERROR",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-        } while (n3 < 0 || n3 > 5);
+        n3 = Double.parseDouble(nota3Label.getText());
+        if (n3 < 0 || n3 > 5) {
+            JOptionPane.showMessageDialog(null, "La nota 3 esta fuera del rango permitido", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+        }
 
 
         double promedio = (n1 + n2 + n3) / 3;
@@ -137,8 +130,5 @@ public class Ventana3 extends JFrame {
         }
         promedioNotasFinales = suma / ListaNotasFinales.size();
         cantEstudiantesValidados++;
-
     }
-
-
 }
